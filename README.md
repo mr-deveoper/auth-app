@@ -80,6 +80,14 @@ Broswe the frontend views on
   http://127.0.0.1:8000
 ```
 
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  php artisan test
+```
+
 ## Screenshots for Frontend view
 
 ![App Screenshot](https://i.ibb.co/wcDTj8w/image.png)
