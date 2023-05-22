@@ -8,7 +8,7 @@ use Exception;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class GoogleController extends Controller
+class GoogleLoginController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -49,7 +49,7 @@ class GoogleController extends Controller
                 return redirect()->intended('/');
             }
         } catch (Exception $e) {
-            dd($e->getMessage());
+            return redirect()->with('error', 'Error happened while login with google!');
         }
     }
 }

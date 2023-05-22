@@ -53,10 +53,11 @@ Add your DB variables in env
   change DB_CONNECTION , DB_DATABASE , DB_USERNAME , DB_PASSWORD 
 ```
 
-Add your google project credintials
+Add your google project credintials in env
 
 ```bash
   add GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET with google project data
+  change APP_URL to website url or local url 
 ```
 
 Import tables

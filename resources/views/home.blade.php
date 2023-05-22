@@ -21,6 +21,12 @@
             <div
                 class="scale-100 px-10 py-20 bg-white from-gray-700/50 via-transparent rounded-lg shadow-2xl shadow-gray-500/20 flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 justify-center text-center">
                 <div class="d-block text-center">
+                    @if (session('error'))
+                        <div class="alert alert-success">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
                     @auth
                         <h1 class="text-3xl font-bold mb-10">{{ __('Welcome') }}, <span class="font-semibold">{{ Auth::user()->name }}</span></h1>
                         <a class="d-inline-block py-3 px-20 bg-black text-white font-semibold text-lg rounded-full shadow-md  focus:outline-none focus:ring-2 focus:ring-opacity-75" href="{{ route('logout') }}">

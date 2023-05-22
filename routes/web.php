@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\GoogleLoginController;
 use App\Http\Controllers\LogoutController;
 
 /*
@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('loginWithGoogle');
-Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+Route::get('auth/google', [GoogleLoginController::class, 'redirectToGoogle'])->name('loginWithGoogle');
+Route::get('auth/google/callback', [GoogleLoginController::class, 'handleGoogleCallback'])->name('googleCallback');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('logout', [LogoutController::class, 'logout'])->name('logout');
